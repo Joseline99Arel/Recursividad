@@ -1,0 +1,61 @@
+package Clases;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Arel
+ */
+public class Main {
+    
+    public static void main (String []args){
+    Scanner entrada = new Scanner (System.in);
+    
+    Recursividad ob=new Recursividad();
+    
+    int a=1,Respuesta=0;
+    while(a==1){
+        System.out.println("¿Que promedio deceas realizar?");
+        System.out.println("1.- Serie Fibonacci");
+        System.out.println("2.- Presentar números del 1 al 10");
+        System.out.println("3.- Factorial");
+        System.out.println("4.- Salir");
+        Respuesta=entrada.nextInt();
+            
+        if(Respuesta>0 && Respuesta<5){
+            switch(Respuesta){
+                case 1:
+                    int Opcion;
+                    System.out.println("Que tan grande deceas tu serie");
+                    Opcion=entrada.nextInt();
+                    System.out.println("Serie Fiboncci: ");
+                    for(int i=0; i<Opcion; i++)
+                    {
+                        System.out.println(ob.Fibonacci(i));
+                    }
+                break;
+                case 2:
+                    ob.Mostrar(1);
+                break;
+                case 3: 
+                    int Opc;
+                    System.out.println("Ingresa un numero: ");
+                    Opc=entrada.nextInt();
+                    System.out.println("");
+                    System.out.println("El factorial de: "+Opc+" es: "+ob.Factorial(Opc));
+                    System.out.println("");
+                break;
+                case 4: 
+                    System.exit(0);
+                break; 
+            }
+            System.out.println("Quieres repetir el proceso 1:Si 2:No");
+            a=entrada.nextInt();
+            }
+            else
+            {
+                System.out.println("El numero que ingresaste esta fuera de las opciones ");
+            }
+        }     
+    }    
+}
